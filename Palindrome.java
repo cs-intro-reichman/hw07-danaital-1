@@ -1,13 +1,16 @@
 /** Checks if a given string is a palindrome. */
 public class Palindrome {
-
-	public static void main(String[]args) {
-    	System.out.println(isPalindrome(args[0]));
-    }
+	public static void main(String[] args){
+		System.out.print(isPalindrome (args[0],0));
+	}
+	public static boolean isPalindrome (String s){
+		return isPalindrome (s,0);
+	}
 	
-	/** Checks if the given string is a palindrome. */
-	public static boolean isPalindrome(String s) {
-		//// Replace the followaing statement with your code
-		return false;
-    }
+	private static boolean isPalindrome (String s, int i){
+			if (i > s.length() / 2){
+				return true;
+			}
+			return s.charAt(i) == s.charAt(s.length() - i - 1) && isPalindrome(s, i + 1);
+	}
 }
